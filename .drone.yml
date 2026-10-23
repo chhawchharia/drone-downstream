@@ -9,7 +9,7 @@ pool:
 
 steps:
   - name: lint
-    image: golang:1.20
+    image: harness0.harness.io/oci/docker_artifacts/hhi/go:1.26.10
     commands:
       - go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
       - golangci-lint version
@@ -18,7 +18,7 @@ steps:
       - name: gopath
         path: "/go"
   - name: test
-    image: golang:1.20
+    image: harness0.harness.io/oci/docker_artifacts/hhi/go:1.26.10
     commands:
       - go test -cover ./...
     volumes:
@@ -45,14 +45,14 @@ pool:
 
 steps:
   - name: environment
-    image: golang:1.20
+    image: harness0.harness.io/oci/docker_artifacts/hhi/go:1.26.10
     environment:
       CGO_ENABLED: "0"
     commands:
       - go version
       - go env
   - name: build
-    image: golang:1.20
+    image: harness0.harness.io/oci/docker_artifacts/hhi/go:1.26.10
     environment:
       CGO_ENABLED: "0"
     commands:
@@ -88,14 +88,14 @@ pool:
 
 steps:
   - name: environment
-    image: golang:1.20
+    image: harness0.harness.io/oci/docker_artifacts/hhi/go:1.26.10
     environment:
       CGO_ENABLED: "0"
     commands:
       - go version
       - go env
   - name: build
-    image: golang:1.20
+    image: harness0.harness.io/oci/docker_artifacts/hhi/go:1.26.10
     environment:
       CGO_ENABLED: "0"
     commands:
@@ -131,14 +131,14 @@ pool:
 
 steps:
   - name: environment
-    image: golang:1.20
+    image: golang:1.26.10
     environment:
       CGO_ENABLED: "0"
     commands:
       - go version
       - go env
   - name: build
-    image: golang:1.20
+    image: golang:1.26.10
     environment:
       CGO_ENABLED: "0"
     commands:
@@ -180,14 +180,14 @@ pool:
 
 steps:
   - name: environment
-    image: golang:1.20
+    image: golang:1.26.10
     environment:
       CGO_ENABLED: "0"
     commands:
       - go version
       - go env
   - name: build
-    image: golang:1.20
+    image: golang:1.26.10
     environment:
       CGO_ENABLED: "0"
     commands:
